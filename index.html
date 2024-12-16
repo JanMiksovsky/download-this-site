@@ -22,9 +22,13 @@
 
       window.addEventListener("load", () => {
         document.querySelector("button").addEventListener("click", async () => {
+          // Ask the user where they want to save the site
           const directory = await showDirectoryPicker();
+          // Create a writable tree for that local directory
           const browserFiles = new BrowserFileTree(directory);
+          // Get the current site as a tree
           const site = new ExplorableSiteTree();
+          // Copy the site into the local directory
           await browserFiles.set("site", site);
         });
       });
