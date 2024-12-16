@@ -1,0 +1,7 @@
+{
+  "name": "download-this-site",
+  "type": "module",
+  "dependencies": {
+    "@weborigami/async-tree": "0.2.2"
+  }
+}
