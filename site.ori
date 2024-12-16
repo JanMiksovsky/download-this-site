@@ -1,0 +1,4 @@
+{
+  ...src
+  async-tree: node_modules/@weborigami/async-tree
+}
