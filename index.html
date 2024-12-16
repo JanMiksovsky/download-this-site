@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <script type="importmap">
+      {
+        "imports": {
+          "@weborigami/async-tree": "../../node_modules/@weborigami/async-tree/browser.js"
+        }
+      }
+    </script>
+    <script type="module">
+      import {
+        BrowserFileTree,
+        ExplorableSiteTree,
+        Tree,
+      } from "@weborigami/async-tree";
+
+      window.root = new BrowserFileTree();
+      Object.assign(window, { BrowserFileTree, ExplorableSiteTree, Tree });
+
+      window.addEventListener("load", () => {
+        document.querySelector("button").addEventListener("click", async () => {
+          const directory = await showDirectoryPicker();
+          const browserFiles = new BrowserFileTree(directory);
+          const site = new ExplorableSiteTree();
+          await browserFiles.set("site", site);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <button>Download this site</button>
+    <p>
+      <a href="./about/">About</a>
+    </p>
+  </body>
+</html>
