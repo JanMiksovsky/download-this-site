@@ -2,7 +2,8 @@
   "name": "download-this-site",
   "type": "module",
   "dependencies": {
-    "@weborigami/async-tree": "0.2.2"
+    "@weborigami/async-tree": "0.2.2",
+    "@weborigami/origami": "0.2.2"
   },
   "scripts": {
     "build": "ori 'copy jsonKeys(site.ori), clear files:build'"
